@@ -51,7 +51,7 @@ CollabBoard is a modern task management tool designed for teams that need realâ€
    ```bash
    git clone <repository-url>
    cd collaborative-todo-board
-````
+
 
 2. **Install dependencies**
 
