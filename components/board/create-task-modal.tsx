@@ -12,9 +12,10 @@ import { Alert, AlertDescription } from "@/components/ui/alert"
 interface CreateTaskModalProps {
   open: boolean
   onClose: () => void
+  onTaskCreated?: () => void
 }
 
-export default function CreateTaskModal({ open, onClose }: CreateTaskModalProps) {
+export default function CreateTaskModal({ open, onClose, onTaskCreated }: CreateTaskModalProps) {
   const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
   const [priority, setPriority] = useState("medium")
@@ -51,6 +52,7 @@ export default function CreateTaskModal({ open, onClose }: CreateTaskModalProps)
         setTitle("")
         setDescription("")
         setPriority("medium")
+        onTaskCreated?.() // Refresh tasks list
         onClose()
       } else {
         const data = await response.json()

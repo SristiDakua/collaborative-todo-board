@@ -11,9 +11,10 @@ interface HeaderProps {
   user: any
   onToggleActivity: () => void
   showActivityPanel: boolean
+  onTaskCreated?: () => void
 }
 
-export default function Header({ user, onToggleActivity, showActivityPanel }: HeaderProps) {
+export default function Header({ user, onToggleActivity, showActivityPanel, onTaskCreated }: HeaderProps) {
   const [showCreateModal, setShowCreateModal] = useState(false)
   const router = useRouter()
 
@@ -97,7 +98,11 @@ export default function Header({ user, onToggleActivity, showActivityPanel }: He
         </div>
       </header>
 
-      <CreateTaskModal open={showCreateModal} onClose={() => setShowCreateModal(false)} />
+      <CreateTaskModal 
+        open={showCreateModal} 
+        onClose={() => setShowCreateModal(false)} 
+        onTaskCreated={onTaskCreated}
+      />
     </>
   )
 }

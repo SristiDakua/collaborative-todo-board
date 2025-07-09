@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({
       token,
-      user: { _id: user._id, username: user.username, email: user.email },
+      user: { _id: user._id, name: user.username, email: user.email },
     })
   } catch (error) {
     console.error("Registration error:", error)

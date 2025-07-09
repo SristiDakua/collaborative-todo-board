@@ -25,7 +25,7 @@ export async function GET(request: NextRequest) {
   const users = Database.users.find()
   const safeUsers = users.map((user) => ({
     _id: user._id,
-    username: user.username,
+    name: user.username,
     email: user.email,
   }))
 

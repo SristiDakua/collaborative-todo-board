@@ -122,6 +122,7 @@ export default function BoardPage() {
           user={user}
           onToggleActivity={() => setShowActivityPanel(!showActivityPanel)}
           showActivityPanel={showActivityPanel}
+          onTaskCreated={fetchTasks}
         />
 
         <div className="flex relative z-10">

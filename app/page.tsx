@@ -36,7 +36,7 @@ export default function HomePage() {
       const endpoint = isLogin ? "/api/auth/login" : "/api/auth/register"
       const body = isLogin 
         ? { email, password }
-        : { name, email, password }
+        : { username: name, email, password }
 
       const response = await fetch(endpoint, {
         method: "POST",
